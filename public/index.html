@@ -9,7 +9,15 @@
 </head>
 <body>
   <div id="app">
-
+    <ul>
+      <li v-for="todo in todos"></li>
+      <span>{{todo}}</span>
+    </ul>
+    <form v-on:submit.prevent="saveNewTodo">
+      <label for="new-todo">Add a task:</label>
+      <input id="new-todo" type="text" />
+      <input type="submit" value ="Save New Item" />
+    </form>
   </div>
 </body>
 </html>
