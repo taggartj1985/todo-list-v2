@@ -150,7 +150,7 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.esm.js\");\n\n\ndocument.addEventListener('DOMContentLoaded', () => {\n  new vue__WEBPACK_IMPORTED_MODULE_0__[\"default\"]({\n    el: \"#app\",\n    data: {\n      todos: [\"Walk Dog\", \"Washing\", \"Play Games\"],\n\n      newTodo: \"\"\n    },\n    methods: {\n      saveNewTodo: function(){\n        this.todos.push(this.newTodo);\n        this.newTodo = \"\";\n      }\n\n    }\n  });\n});\n\n\n//# sourceURL=webpack:///./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.esm.js\");\n\n\ndocument.addEventListener('DOMContentLoaded', () => {\n  new vue__WEBPACK_IMPORTED_MODULE_0__[\"default\"]({\n    el: \"#app\",\n    data: {\n      tasks: [\n    {todo: \"Feed Dog\", isComplete: false},\n    {todo: \"Play Games\", isComplete: true},\n    {todo: \"Have A Beer\", isComplete: false},\n  ],\n      newTask: \"\"\n    },\n    methods: {\n      saveNewTask: function(){\n        const taskToAdd= {\n          todo: this.newTask,\n          isComplete: false\n        }\n        this.tasks.push(taskToAdd);\n        this.newTask = \"\";\n      },\n      finishTask: function(index){\n        this.tasks[index].isComplete = true;\n      }\n    }\n  });\n});\n\n\n//# sourceURL=webpack:///./src/app.js?");
 
 /***/ })
 

@@ -4,20 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css">
   <title>Todo List</title>
   <script src="./js/bundle.js"></script>
 </head>
 <body>
   <div id="app">
-    <ul>
-      <li v-for="todo in todos"></li>
-      <span>{{todo}}</span>
-    </ul>
-    <form v-on:submit.prevent="saveNewTodo">
-      <label for="new-todo">Add a task:</label>
-      <input id="new-todo" type="text" />
-      <input type="submit" value ="Save New Item" />
+
+    <form v-on:submit.prevent="saveNewTask">
+      <label for="new-task">Add a new task:</label>
+      <input id="new-task" type="text" v-model="newTask"/>
+      <input type="submit" value ="Save Task" />
     </form>
+
+    <ul>
+      <li v-for="(task, index) in tasks" v-bind:class="task.isComplete ? 'complete' : 'not-complete' ">
+        <span>{{ task.todo }}</span>
+        <span v-if="task.isComplete">Finished!</span>
+        <button v-if="!task.isComplete" v-on:click="finishTask(index)">Finish</button>
+      </li>
+    </ul>
+
+
   </div>
 </body>
 </html>
