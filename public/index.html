@@ -18,11 +18,11 @@
       <input id="new-task" type="text" v-model="newTask"/>
       <input type="submit" value ="Save Task" /><br>
 
-      <!-- <lable for="priority">Priority:</lable>
-      <input type="radio" name="priority" value="low-priority">
+      <lable for="priority">Priority:</lable>
+      <input type="radio" name="priority" v-model="newPriority" value="low-priority">
       <label for="low-priority">Low</label>
-      <input type="radio" name="priority" value="High-priority">
-      <label for="High-priority">High</label> -->
+      <input type="radio" name="priority" v-model="newPriority" value="High-priority">
+      <label for="High-priority">High</label>
 
     </form>
 
@@ -32,8 +32,8 @@
     <ul>
       <li v-for="(task, index) in tasks" v-bind:class="task.isPriority ? 'priority' : 'not-priority' ">
         <span>{{ task.todo }}</span>
-        <span v-if="task.isPriority">Low!</span>
-        <span v-if="!task.isPriority">High!</span>
+        <span v-if="task.isPriority">Low Priority!</span>
+        <span v-if="!task.isPriority">High Priority!!</span>
         <button v-if="!task.isPriority" v-on:click="highTask(index)">Low</button>
         <button v-if="task.isPriority" v-on:click="lowTask(index)">High</button>
       </li>

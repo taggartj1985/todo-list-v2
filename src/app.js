@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
     {todo: "Play Games", isPriority: true},
     {todo: "Have A Beer", isPriority: false},
   ],
-      newTask: ""
+      newTask: "",
+      newPriority: "",
     },
     methods: {
       saveNewTask: function(){
