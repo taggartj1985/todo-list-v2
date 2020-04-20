@@ -16,7 +16,7 @@ header {
 }
 
 header, form{
-  min-height: 20vh;
+  min-height: 25vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,8 +24,8 @@ header, form{
 
 
 form input, form button{
-  padding: 0.1rem;
-  font-size: 1rem;
+  padding: 0.2rem;
+  font-size: 0.5rem;
   border: none;
   background: white;
 }
@@ -67,12 +67,12 @@ li button {
   cursor: pointer;
 }
 
-li.complete {
+li.priority {
   border: 2px solid green;
   color: white;
 
 }
 
-li.not-complete {
+li.not-priority {
   border: 2px solid #f2360c;
 }

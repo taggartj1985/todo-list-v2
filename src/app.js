@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     el: "#app",
     data: {
       tasks: [
-    {todo: "Feed Dog", isComplete: false},
-    {todo: "Play Games", isComplete: true},
-    {todo: "Have A Beer", isComplete: false},
+    {todo: "Feed Dog", isPriority: false},
+    {todo: "Play Games", isPriority: true},
+    {todo: "Have A Beer", isPriority: false},
   ],
       newTask: ""
     },
@@ -15,13 +15,17 @@ document.addEventListener('DOMContentLoaded', () => {
       saveNewTask: function(){
         const taskToAdd= {
           todo: this.newTask,
-          isComplete: false
+          isPriority: false
         }
         this.tasks.push(taskToAdd);
         this.newTask = "";
       },
-      finishTask: function(index){
-        this.tasks[index].isComplete = true;
+      highTask: function(index){
+        this.tasks[index].isPriority = true;
+      },
+
+      lowTask: function(index){
+        this.tasks[index].isPriority = false;
       }
     }
   });
