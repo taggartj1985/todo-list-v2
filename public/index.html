@@ -16,8 +16,13 @@
     <form v-on:submit.prevent="saveNewTask">
       <label for="new-task">Add a new task:</label>
       <input id="new-task" type="text" v-model="newTask"/>
-      <input type="submit" value ="Save Task" />
+      <input type="submit" value ="Save Task" /><br>
+      <input type="radio" value="low-priority">
+      <label for="low-priority">Low</label>
+      <input type="radio" value="High-priority">
+      <label for="High-priority">High</label>
     </form>
+
 
     <ul>
       <li v-for="(task, index) in tasks" v-bind:class="task.isComplete ? 'complete' : 'not-complete' ">
